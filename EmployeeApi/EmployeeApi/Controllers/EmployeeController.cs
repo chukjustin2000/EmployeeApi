@@ -9,9 +9,11 @@ using System.Net.Http;
 using System.Web.Http;
 using System.Web.Http.Description;
 using EmployeeApi.Models;
+using System.Web.Http.Cors;
 
 namespace EmployeeApi.Controllers
 {
+   // [EnableCors(origins: "http://localhost:4200/", headers:"*", methods:"*")]
     public class EmployeeController : ApiController
     {
         private EmployeeApiDB db = new EmployeeApiDB();

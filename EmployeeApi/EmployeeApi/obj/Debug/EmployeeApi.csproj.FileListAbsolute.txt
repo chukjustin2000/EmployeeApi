@@ -75,3 +75,6 @@ D:\Projects\DotNet Projects\EmployeeManager\EmployeeApi\EmployeeApi\bin\System.W
 D:\Projects\DotNet Projects\EmployeeManager\EmployeeApi\EmployeeApi\obj\Debug\EmployeeApi.csprojResolveAssemblyReference.cache
 D:\Projects\DotNet Projects\EmployeeManager\EmployeeApi\EmployeeApi\obj\Debug\EmployeeApi.dll
 D:\Projects\DotNet Projects\EmployeeManager\EmployeeApi\EmployeeApi\obj\Debug\EmployeeApi.pdb
+D:\Projects\DotNet Projects\EmployeeManager\EmployeeApi\EmployeeApi\bin\System.Web.Cors.dll
+D:\Projects\DotNet Projects\EmployeeManager\EmployeeApi\EmployeeApi\bin\System.Web.Http.Cors.dll
+D:\Projects\DotNet Projects\EmployeeManager\EmployeeApi\EmployeeApi\bin\System.Web.Http.Cors.xml

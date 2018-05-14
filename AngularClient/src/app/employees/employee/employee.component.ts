@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { EmployeeService } from '../shared/employee.service';
 import { NgForm } from '@angular/forms';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-employee',
@@ -9,7 +10,8 @@ import { NgForm } from '@angular/forms';
 })
 export class EmployeeComponent implements OnInit {
 
-  constructor(private employeeService : EmployeeService) { }
+  constructor(private employeeService : EmployeeService,
+                private toastr : ToastrService) { }
 
   ngOnInit() {
     this.resetForm();
@@ -29,10 +31,23 @@ export class EmployeeComponent implements OnInit {
     }
   }
   onSubmit(form : NgForm){
-    this.employeeService.postEmployee(form.value)
-      .subscribe(data => {
-        this.resetForm(form);
-      })
+    if(form.value.EmployeeID == null){
+      this.employeeService.postEmployee(form.value)
+        .subscribe(data => {
+          this.resetForm(form);
+          this.employeeService.getEmployeeList();
+          this.toastr.success("New Record Successfully Added !","Employee Register");
+        });
+    }
+    else{
+      //update
+      this.employeeService.putEmployee(form.value.EmployeeID, form.value)
+        .subscribe(data => {
+          this.resetForm(form);
+          this.employeeService.getEmployeeList();
+          this.toastr.info("Record Successfully Updated !","Employee Register");
+        });
+    }
   }
 
 }
